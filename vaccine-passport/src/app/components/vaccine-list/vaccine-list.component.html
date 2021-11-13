@@ -1,0 +1,34 @@
+<table class="table">
+    <thead class="table-dark">
+        <tr>
+            <th>Name</th>
+            <th>Manufacturer</th>
+            <th>Doses</th>
+            <th>Requirement</th>
+            <th>Alert</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let tempVaccine of vaccine">
+            <td>
+                {{tempVaccine.name}} 
+            </td>
+            <td>
+                {{tempVaccine.manufacturer}} 
+            </td>
+            <td>
+                {{tempVaccine.dosesInRoutineSeries}} 
+            </td>
+            <td>
+                {{tempVaccine.requirement}} 
+            </td>
+            <td>
+                {{tempVaccine.alertLevel}} 
+            </td>
+        </tr>
+        
+
+    </tbody>
+
+</table>
+
