@@ -3,6 +3,11 @@
     <app-search></app-search>
 </div>
 
+<div *ngIf="traveller?.length == 0" class="alert alert-warning col-md-12" role="alert">
+    No user found
+
+</div>
+
 
 
 <div class="row">
@@ -35,7 +40,7 @@
                     <div class="row">
 
                     
-
+                        
 
                         <div class="col">
                             <div class="form-group row">
@@ -58,7 +63,7 @@
                               <div class="form-group row">
                                   <label for="lastName" class="col-sm-5 col-form-label">Last Name</label>
                                   <div class="col-sm-5">
-                                    <input type="text" readonly class="form-control-plaintext" id="lastName" value="{{traveller[0].lastName}}">
+                                    <input type="text" readonly class="form-control-plaintext" id="lastName" value="{{traveller[0]?.lastName}}">
                                   </div>
                                 </div>
                                 <hr>
@@ -66,7 +71,7 @@
                                 <div class="form-group row">
                                   <label for="sex" class="col-sm-5 col-form-label">Sex</label>
                                   <div class="col-sm-5">
-                                    <input type="text" readonly class="form-control-plaintext" id="sex" value="{{traveller[0].sex}}">
+                                    <input type="text" readonly class="form-control-plaintext" id="sex" value="{{traveller[0]?.sex}}">
                                   </div>
                                 </div>
                                 <hr>
@@ -74,7 +79,7 @@
                                 <div class="form-group row">
                                   <label for="nationality" class="col-sm-5 col-form-label">Nationality</label>
                                   <div class="col-sm-5">
-                                    <input type="text" readonly class="form-control-plaintext" id="sex" value="{{traveller[0].nationality}}">
+                                    <input type="text" readonly class="form-control-plaintext" id="sex" value="{{traveller[0]?.nationality}}">
                                   </div>
                                 </div>
                                 <hr>
@@ -82,13 +87,47 @@
                                 <div class="form-group row">
                                   <label for="dob" class="col-sm-5 col-form-label">Date of Birth</label>
                                   <div class="col-sm-5">
-                                    <input type="text" readonly class="form-control-plaintext" id="dob" placeholder="{{traveller[0].dateOfBirth}}">
+                                    <input type="text" readonly class="form-control-plaintext" id="dob" value="{{traveller[0]?.dateOfBirth}}">
                                   </div>
                                 </div>
                         </div>
                         <div class="col">
                             <h6>Address</h6>
-                            <div class="form-group row">
+                            <div *ngFor="let address of traveller[0].permanentAddress" class="form-group row">
+                                <label for="addressType" class="col-sm-5 col-form-label">Address Type</label>
+                                <div class="col-sm-5">
+                                    <input type="text" readonly class="form-control-plaintext" id="addressType" value="{{address.addressType}}">
+                                </div>
+
+                                <label for="streetNumber" class="col-sm-5 col-form-label">Street Number</label>
+                                <div class="col-sm-5">
+                                    <input type="text" readonly class="form-control-plaintext" id="streetNumber" value="{{address.streetNumber}}">
+                                </div>
+
+                                <label for="streetName" class="col-sm-5 col-form-label">Street Name</label>
+                                <div class="col-sm-5">
+                                    <input type="text" readonly class="form-control-plaintext" id="streetName" value="{{address.streetName}}">
+                                </div>
+
+                                <label for="city" class="col-sm-5 col-form-label">City</label>
+                                <div class="col-sm-5">
+                                    <input type="text" readonly class="form-control-plaintext" id="city" value="{{address.city}}">
+                                </div>
+
+                                <label for="parish" class="col-sm-5 col-form-label">Parish</label>
+                                <div class="col-sm-5">
+                                    <input type="text" readonly class="form-control-plaintext" id="parish" value="{{address.parish}}">
+                                </div>
+
+                                <label for="county" class="col-sm-5 col-form-label">County</label>
+                                <div class="col-sm-5">
+                                    <input type="text" readonly class="form-control-plaintext" id="county" value="{{address.county}}">
+                                </div>
+
+                                <label for="country" class="col-sm-5 col-form-label">Country</label>
+                                <div class="col-sm-5">
+                                    <input type="text" readonly class="form-control-plaintext" id="country" value="{{address.country}}">
+                                </div>
 
                             </div>
                             
